@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-
 # Note
 # ---------------------------------------
 # Make sure file has needed perms
@@ -10,7 +9,7 @@
 # Terminal Tools
 # ---------------------------------------
 sudo apt install terminator
-sudo apt install atuojump
+sudo apt install autojump
 sudo apt install tree
 sudo apt install acpi
 sudo apt install git
@@ -30,11 +29,12 @@ sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.o
 # add auto-suggester
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
 
+# install k
+sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k
+
 # install powerlevel9k
 sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
 
-# install k
-sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k
 
 
 # Install .zshrc file 
@@ -45,6 +45,7 @@ sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
 
 
 # Add Plugin Update Code to Update File
+# https://unix.stackexchange.com/questions/477258/how-to-auto-update-custom-plugins-in-oh-my-zsh
 # ---------------------------------------
 #echo "printf "\n${BLUE}%s${RESET}\n" "Updating custom plugins"
 #		cd custom/plugins
@@ -54,4 +55,4 @@ sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
 #			 printf "${YELLOW}%s${RESET}\n" "${plugin%/}"
 #			 git -C "$plugin" pull
 #		  fi
-#s		done" >> $ZSH/tools/upgrade.sh
+#s		done" >> $HOME/.oh-my-zsh/tools/upgrade.sh

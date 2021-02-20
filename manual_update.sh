@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 
-
 # Note
 # ---------------------------------------
 # Make sure file has needed perms
@@ -30,4 +29,6 @@ sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k
 
 # Install .zshrc file 
 # ---------------------------------------
-# sudo wget https://github.com/cameronww7/Terminal-Customization  /opt/
+sudo wget https://github.com/cameronww7/Terminal-Customization  /opt/
+
+sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
