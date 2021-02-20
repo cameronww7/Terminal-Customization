@@ -41,7 +41,7 @@ sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k
 # ---------------------------------------
 sudo wget https://github.com/cameronww7/Terminal-Customization  /opt/
 
-sudo echo /opt/Terminal-Customization
+sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
 
 
 # Add Plugin Update Code to Update File
