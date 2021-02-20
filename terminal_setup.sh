@@ -6,6 +6,11 @@
 # chmod +x terminal_setup.sh
 
 
+# Update the System
+# ---------------------------------------
+sudo apt update
+
+
 # Terminal Tools
 # ---------------------------------------
 sudo apt install terminator

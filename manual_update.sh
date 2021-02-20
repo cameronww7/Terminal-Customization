@@ -5,6 +5,9 @@
 # Make sure file has needed perms
 # chmod +x terminal_setup.sh
 
+# Update the System
+# ---------------------------------------
+sudo apt update
 
 # Install Oh-My_ZSH
 # ---------------------------------------
