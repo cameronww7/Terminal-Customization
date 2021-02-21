@@ -5,7 +5,9 @@
 
 # Create Log FIle
 # ---------------------------------------
-sudo touch terminal_setup_logs.txt
+sudo touch /opt/terminal_setup_logs.txt
+
+cd /opt/
 
 # Update the System
 # ---------------------------------------
