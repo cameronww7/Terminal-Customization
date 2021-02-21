@@ -60,4 +60,6 @@ sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
 #			 printf "${YELLOW}%s${RESET}\n" "${plugin%/}"
 #			 git -C "$plugin" pull
 #		  fi
-#s		done" >> $HOME/.oh-my-zsh/tools/upgrade.sh
+#		done" >> $HOME/.oh-my-zsh/tools/upgrade.sh
+
+echo "\n \n Dont Forget to add in Code at the bottom of upgrade.sh in .oh-my-zsh"
