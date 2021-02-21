@@ -6,35 +6,41 @@
 
 # Update the System
 # ---------------------------------------
-sudo apt update
-
-
-# Install Oh-My_ZSH
-# ---------------------------------------
-# Install oh-my-zsh
-sudo curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh; zsh
+echo "\n apt update"
+echo "\n apt update" >> terminal_setup_logs.txt
+sudo apt update >> terminal_setup_logs.txt
 
 
 # Install Plugins
 # ---------------------------------------
 # add highlighting
-sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
+cd $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
+sudo git fetch -A
+sudo git pull
+
 
 # add auto-suggester
-sudo git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
+cd $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
+sudo git fetch -A
+sudo git pull
 
 # install k
-sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k
+cd $HOME/.oh-my-zsh/plugins/k
+sudo git fetch -A
+sudo git pull
 
 # install powerlevel9k
-sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
-
+cd $HOME/.oh-my-zsh/custom/themes/powerlevel9k
+sudo git fetch -A
+sudo git pull
 
 # Install .zshrc file 
 # ---------------------------------------
-sudo wget https://github.com/cameronww7/Terminal-Customization /opt/
+cd /opt/Terminal-Customization
+sudo git fetch -A
+sudo git pull
 
-sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
+sudo cat /opt/Terminal-Customization/kali/.zshrc > ~/.zshrc
 
 sudo source ~/.zshrc
 
