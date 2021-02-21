@@ -18,7 +18,7 @@ sudo apt update >> /opt/manual_update_logs.txt
 # add highlighting
 echo "\n Updating - zsh-syntax-highlighting"
 echo "\n Updating - zsh-syntax-highlighting" >> /opt/manual_update_logs.txt
-cd $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
+cd /home/$USER/.oh-my-zsh/plugins/zsh-syntax-highlighting
 sudo git fetch -A >> /opt/manual_update_logs.txt
 sudo git pull >> /opt/manual_update_logs.txt
 
@@ -26,21 +26,21 @@ sudo git pull >> /opt/manual_update_logs.txt
 # add auto-suggester
 echo "\n Updating - zsh-autosuggestions"
 echo "\n Updating - zsh-autosuggestions" >> /opt/manual_update_logs.txt
-cd $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
+cd /home/$USER/.oh-my-zsh/plugins/zsh-autosuggestions
 sudo git fetch -A >> /opt/manual_update_logs.txt
 sudo git pull >> /opt/manual_update_logs.txt
 
 # install k
 echo "\n Updating - k"
 echo "\n Updating - k" >> /opt/manual_update_logs.txt
-cd $HOME/.oh-my-zsh/plugins/k
+cd /home/$USER/.oh-my-zsh/plugins/k
 sudo git fetch -A >> /opt/manual_update_logs.txt
 sudo git pull >> /opt/manual_update_logs.txt
 
 # install powerlevel9k
 echo "\n Updating - powerlevel9k"
 echo "\n Updating - powerlevel9k" >> /opt/manual_update_logs.txt
-cd $HOME/.oh-my-zsh/custom/themes/powerlevel9k
+cd /home/$USER/.oh-my-zsh/custom/themes/powerlevel9k
 sudo git fetch -A >> /opt/manual_update_logs.txt
 sudo git pull >> /opt/manual_update_logs.txt
 
