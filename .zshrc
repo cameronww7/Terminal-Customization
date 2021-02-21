@@ -2,7 +2,7 @@
 
 # ***** Path to your oh-my-zsh installation *****
 # ---------------------------------------
-export ZSH=$HOME/.oh-my-zsh
+export ZSH="$HOME/.oh-my-zsh"
 # ---------------------------------------
 
 
@@ -242,7 +242,7 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 
 # ***** Sources ZSH *****
 # ---------------------------------------
-source $ZSH/oh-my-zsh.sh
+source "$ZSH/oh-my-zsh.sh"
 
 
 # ***** User configuration *****
@@ -268,4 +268,4 @@ alias his='history'
 alias history="history 0"
 # ---------------------------------------
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

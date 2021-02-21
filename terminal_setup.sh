@@ -13,13 +13,13 @@ cd /opt/
 # ---------------------------------------
 echo "\n apt update"
 echo "\n apt update" >> terminal_setup_logs.txt
-sudo apt update
+sudo apt update >> terminal_setup_logs.txt
 
 # Install zsh
 # ---------------------------------------
 echo "\n Installing - zsh"
 echo "\n Installing - zsh" >> terminal_setup_logs.txt
-sudo apt install -y zsh
+sudo apt install -y zsh >> terminal_setup_logs.txt
 
 echo "\n echo $SHELL"
 echo "\n echo $SHELL" >> terminal_setup_logs.txt
@@ -33,27 +33,27 @@ chsh -s /usr/bin/zsh
 # ---------------------------------------
 echo "\n Installing - gedit"
 echo "\n Installing - gedit" >> terminal_setup_logs.txt
-sudo apt install -y gedit
+sudo apt install -y gedit >> terminal_setup_logs.txt
 
 echo "\n Installing - terminator"
 echo "\n Installing - terminator" >> terminal_setup_logs.txt
-sudo apt install -y terminator
+sudo apt install -y terminator >> terminal_setup_logs.txt
 
 echo "\n Installing - autojump"
 echo "\n Installing - autojump" >> terminal_setup_logs.txt
-sudo apt install -y autojump
+sudo apt install -y autojump >> terminal_setup_logs.txt
 
 echo "\n Installing - tree"
 echo "\n Installing - tree" >> terminal_setup_logs.txt
-sudo apt install -y tree
+sudo apt install -y tree >> terminal_setup_logs.txt
 
 echo "\n Installing - acpi"
 echo "\n Installing - acpi" >> terminal_setup_logs.txt
-sudo apt install -y acpi
+sudo apt install -y acpi >> terminal_setup_logs.txt
 
 echo "\n Installing - git"
 echo "\n Installing - git" >> terminal_setup_logs.txt
-sudo apt install -y git
+sudo apt install -y git >> terminal_setup_logs.txt
 
 
 # Install Oh-My_ZSH
@@ -61,30 +61,44 @@ sudo apt install -y git
 # Install oh-my-zsh
 echo "\n Installing - oh-my-zsh"
 echo "\n Installing - oh-my-zsh" >> terminal_setup_logs.txt
-sudo curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh; zsh
+sudo wget -P /opt/OhMyZSH/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >> terminal_setup_logs.txt
+cd /opt/OhMyZSH/
+sudo chmod +x /opt/OhMyZSH/install.sh
+./install.sh >> terminal_setup_logs.txt
 
+# install Powerline Fonts
+sudo apt-get install -y fonts-powerline
+
+sudo apt-get install -y fonts-hack
+
+
+# Install Fonts
+sudo wget -P /opt/fonts https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/install.sh
+cd /opt/fonts/
+sudo chmod +x /opt/fonts/install.sh
+./install.sh >> terminal_setup_logs.txt
 
 # Install Plugins
 # ---------------------------------------
 # add highlighting
 echo "\n Installing - highlighting"
 echo "\n Installing - highlighting" >> terminal_setup_logs.txt
-sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting
+sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting >> terminal_setup_logs.txt
 
 # add auto-suggester
 echo "\n Installing - auto-suggester"
 echo "\n Installing - auto-suggester" >> terminal_setup_logs.txt
-sudo git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions >> terminal_setup_logs.txt
 
 # install k
 echo "\n Installing - k"
 echo "\n Installing - k" >> terminal_setup_logs.txt
-sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k
+sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k >> terminal_setup_logs.txt
 
 # install powerlevel9k
 echo "\n Installing - powerlevel9k"
 echo "\n Installing - powerlevel9k" >> terminal_setup_logs.txt
-sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
+sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k >> terminal_setup_logs.txt
 
 
 
@@ -92,7 +106,7 @@ sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/cus
 echo "\n Installing - .zshrc"
 echo "\n Installing - .zshrc" >> terminal_setup_logs.txt
 # ---------------------------------------
-sudo wget https://github.com/cameronww7/Terminal-Customization /opt/
+sudo wget -P /opt/ https://github.com/cameronww7/Terminal-Customization
 
 sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
 
@@ -113,3 +127,7 @@ sudo source ~/.zshrc
 #		done" >> $HOME/.oh-my-zsh/tools/upgrade.sh
 
 echo "\n \n Dont Forget to add in Code at the bottom of upgrade.sh in .oh-my-zsh"
+
+echo "\n Reload the Terminal"
+
+echo "\n\n [END] \n\n"  >> terminal_setup_logs.txt
