@@ -9,25 +9,13 @@ sudo touch /opt/terminal_setup_logs.txt
 
 cd /opt/
 
+
 # Update the System
 # ---------------------------------------
 echo "\n apt update"
 echo "\n apt update" >> terminal_setup_logs.txt
 sudo apt update >> terminal_setup_logs.txt
 
-# Install zsh
-# ---------------------------------------
-echo "\n Installing - zsh"
-echo "\n Installing - zsh" >> terminal_setup_logs.txt
-sudo apt install -y zsh >> terminal_setup_logs.txt
-
-echo "\n echo $SHELL"
-echo "\n echo $SHELL" >> terminal_setup_logs.txt
-echo $SHELL
-echo $SHELL >> terminal_setup_logs.txt
-
-chsh -s $(which zsh) 
-chsh -s /usr/bin/zsh
 
 # Terminal Tools
 # ---------------------------------------
@@ -56,6 +44,22 @@ echo "\n Installing - git" >> terminal_setup_logs.txt
 sudo apt install -y git >> terminal_setup_logs.txt
 
 
+# Install zsh
+# ---------------------------------------
+echo "\n Installing - zsh"
+echo "\n Installing - zsh" >> terminal_setup_logs.txt
+sudo apt install -y zsh >> terminal_setup_logs.txt
+
+echo "Current Shell - $SHELL"
+echo "Current Shell - $SHELL" >> terminal_setup_logs.txt
+
+chsh -s $(which zsh) 
+chsh -s /usr/bin/zsh
+
+echo "Current Shell - $SHELL"
+echo "Current Shell - $SHELL" >> terminal_setup_logs.txt
+
+
 # Install Oh-My_ZSH
 # ---------------------------------------
 # Install oh-my-zsh
@@ -66,17 +70,25 @@ cd /opt/OhMyZSH/
 sudo chmod +x /opt/OhMyZSH/install.sh
 ./install.sh >> terminal_setup_logs.txt
 
-# install Powerline Fonts
+
+# install Fonts
+# ---------------------------------------
+echo "\n Installing - fonts-powerline"
+echo "\n Installing - fonts-powerline" >> terminal_setup_logs.txt
 sudo apt-get install -y fonts-powerline
 
+echo "\n Installing - fonts-hack"
+echo "\n Installing - fonts-hack" >> terminal_setup_logs.txt
 sudo apt-get install -y fonts-hack
 
+echo "\n Installing - fonts-font-awesome"
+echo "\n Installing - fonts-font-awesome" >> terminal_setup_logs.txt
+sudo apt-get install -y fonts-font-awesome
 
-# Install Fonts
-sudo wget -P /opt/fonts https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/install.sh
-cd /opt/fonts/
-sudo chmod +x /opt/fonts/install.sh
-./install.sh >> terminal_setup_logs.txt
+echo "\n Installing - fonts-powerlinesymbols"
+echo "\n Installing - fonts-powerlinesymbols" >> terminal_setup_logs.txt
+sudo apt-get install -y fonts-powerlinesymbols
+
 
 # Install Plugins
 # ---------------------------------------

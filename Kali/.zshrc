@@ -60,7 +60,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # Also see for status - https://gitmemory.com/issue/bhilburn/powerlevel9k/501/500341341
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_MODE="awesome-fontconfig"
 # ---------------------------------------
 
 
@@ -268,4 +268,4 @@ alias his='history'
 alias history="history 0"
 # ---------------------------------------
 
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
