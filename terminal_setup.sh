@@ -6,6 +6,7 @@
 # chmod +x terminal_setup.sh
 
 
+
 # Update the System
 # ---------------------------------------
 sudo apt update
@@ -13,11 +14,11 @@ sudo apt update
 
 # Terminal Tools
 # ---------------------------------------
-sudo apt install terminator
-sudo apt install autojump
-sudo apt install tree
-sudo apt install acpi
-sudo apt install git
+sudo apt install -y terminator
+sudo apt install -y autojump
+sudo apt install -y tree
+sudo apt install -y acpi
+sudo apt install -y git
 
 
 # Install Oh-My_ZSH
@@ -44,9 +45,11 @@ sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/cus
 
 # Install .zshrc file 
 # ---------------------------------------
-sudo wget https://github.com/cameronww7/Terminal-Customization  /opt/
+sudo wget https://github.com/cameronww7/Terminal-Customization /opt/
 
 sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
+
+sudo source ~/.zshrc
 
 
 # Add Plugin Update Code to Update File

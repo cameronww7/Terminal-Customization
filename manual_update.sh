@@ -5,9 +5,11 @@
 # Make sure file has needed perms
 # chmod +x terminal_setup.sh
 
+
 # Update the System
 # ---------------------------------------
 sudo apt update
+
 
 # Install Oh-My_ZSH
 # ---------------------------------------
@@ -23,15 +25,18 @@ sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/.o
 # add auto-suggester
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions $HOME/.oh-my-zsh/plugins/zsh-autosuggestions
 
-# install powerlevel9k
-sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
-
 # install k
 sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k
+
+# install powerlevel9k
+sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
 
 
 # Install .zshrc file 
 # ---------------------------------------
-sudo wget https://github.com/cameronww7/Terminal-Customization  /opt/
+sudo wget https://github.com/cameronww7/Terminal-Customization /opt/
 
 sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
+
+sudo source ~/.zshrc
+
