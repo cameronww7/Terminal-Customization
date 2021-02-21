@@ -6,7 +6,6 @@
 # Create Log FIle
 # ---------------------------------------
 sudo touch /opt/terminal_setup_logs.txt
-
 cd /opt/
 
 
@@ -111,7 +110,6 @@ sudo git clone https://github.com/supercrabtree/k $HOME/.oh-my-zsh/plugins/k >> 
 echo "\n Installing - powerlevel9k"
 echo "\n Installing - powerlevel9k" >> terminal_setup_logs.txt
 sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k >> terminal_setup_logs.txt
-
 
 
 # Install .zshrc file 
