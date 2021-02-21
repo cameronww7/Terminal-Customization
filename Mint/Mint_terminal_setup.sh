@@ -3,6 +3,8 @@
 # Make sure file has needed perms
 # sudo chmod +x Mint_terminal_setup.sh
 
+if ! [ $HOME/.oh-my-zsh/ ] ; then
+
 # Create Log FIle
 # ---------------------------------------
 sudo touch /opt/terminal_install_logs.txt
@@ -70,21 +72,9 @@ chsh -s /usr/bin/zsh $USER
 echo "Current Shell - $SHELL"
 echo "Current Shell - $SHELL" >> terminal_install_logs.txt
 
-#if [ ]
-
-# Install Oh-My_ZSH
-# ---------------------------------------
-echo "\n Installing - oh-my-zsh"
-echo "\n Installing - oh-my-zsh" >> terminal_install_logs.txt
-echo "\n NOTE - When ZSH shell pops - enter exit to contiune install"
-echo "\n NOTE - When ZSH shell pops - enter exit to contiune install"
-#sudo wget -P /opt/OhMyZSH/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >> terminal_install_logs.txt
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-#cd /opt/OhMyZSH/
-#sudo chmod +x /opt/OhMyZSH/install.sh
-#./install.sh 
-
 exit
+
+fi
 
 # install Fonts
 # ---------------------------------------
