@@ -54,7 +54,7 @@ sudo apt-get install -y git >> terminal_install_logs.txt
 # ^^^ For DEBUGGIN ^^^^
 echo "\n Installing - zsh"
 echo "\n Installing - zsh" >> terminal_install_logs.txt
-sudo apt-get install -y zsh >> terminal_install_logs.txt
+sudo apt-get install -y zsh
 
 echo "Current Shell - $SHELL"
 echo "Current Shell - $SHELL" >> terminal_install_logs.txt
@@ -70,14 +70,19 @@ chsh -s /usr/bin/zsh $USER
 echo "Current Shell - $SHELL"
 echo "Current Shell - $SHELL" >> terminal_install_logs.txt
 
+#if [ ]
+
 # Install Oh-My_ZSH
 # ---------------------------------------
 echo "\n Installing - oh-my-zsh"
 echo "\n Installing - oh-my-zsh" >> terminal_install_logs.txt
-sudo wget -P /opt/OhMyZSH/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >> terminal_install_logs.txt
-cd /opt/OhMyZSH/
-sudo chmod +x /opt/OhMyZSH/install.sh
-./install.sh 
+echo "\n NOTE - When ZSH shell pops - enter exit to contiune install"
+echo "\n NOTE - When ZSH shell pops - enter exit to contiune install"
+#sudo wget -P /opt/OhMyZSH/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >> terminal_install_logs.txt
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#cd /opt/OhMyZSH/
+#sudo chmod +x /opt/OhMyZSH/install.sh
+#./install.sh 
 
 exit
 

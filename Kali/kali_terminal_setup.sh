@@ -47,13 +47,18 @@ sudo apt-get install -y git >> terminal_install_logs.txt
 # ---------------------------------------
 echo "\n Installing - zsh"
 echo "\n Installing - zsh" >> terminal_install_logs.txt
-sudo apt-get install -y zsh >> terminal_install_logs.txt
+sudo apt-get install -y zsh
 
 echo "Current Shell - $SHELL"
 echo "Current Shell - $SHELL" >> terminal_install_logs.txt
 
-chsh -s $(which zsh) 
-chsh -s /usr/bin/zsh
+sudo echo "/usr/bin/zsh" >> /etc/shells
+
+sudo chsh -s "$(which zsh)" $USER
+sudo chsh -s /usr/bin/zsh $USER
+
+chsh -s "$(which zsh)" $USER
+chsh -s /usr/bin/zsh $USER
 
 echo "Current Shell - $SHELL"
 echo "Current Shell - $SHELL" >> terminal_install_logs.txt
@@ -67,7 +72,9 @@ echo "\n Installing - oh-my-zsh" >> terminal_install_logs.txt
 sudo wget -P /opt/OhMyZSH/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >> terminal_install_logs.txt
 cd /opt/OhMyZSH/
 sudo chmod +x /opt/OhMyZSH/install.sh
-./install.sh >> terminal_install_logs.txt
+./install.sh 
+
+exit
 
 
 # install Fonts
