@@ -118,9 +118,7 @@ sudo git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/cus
 echo "\n Installing - .zshrc"
 echo "\n Installing - .zshrc" >> terminal_setup_logs.txt
 # ---------------------------------------
-sudo wget -P /opt/ https://github.com/cameronww7/Terminal-Customization
-
-sudo cat /opt/Terminal-Customization/.zshrc > ~/.zshrc
+sudo cat /opt/Terminal-Customization/kali/.zshrc > ~/.zshrc
 
 sudo source ~/.zshrc
 
