@@ -1,6 +1,7 @@
 # Mint Terminal-Customization
 
 1. Clone Terminal-Customization Repo
+   1. `sudo git clone https://github.com/cameronww7/Terminal-Customization /opt/Terminal-Customization/`
 
 2. chmod install Mint_terminal_setup.sh
    1. `sudo chmod +x Mint_terminal_setup.sh`

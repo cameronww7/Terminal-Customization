@@ -3,77 +3,75 @@
 # Make sure file has needed perms
 # sudo chmod +x Mint_terminal_setup.sh
 
-if ! [ $HOME/.oh-my-zsh/ ] ; then
-
-# Create Log FIle
-# ---------------------------------------
-sudo touch /opt/terminal_install_logs.txt
-cd /opt/
-
-
-# Update the System
-# ---------------------------------------
-echo "\n apt update"
-echo "\n apt update" >> terminal_install_logs.txt
-sudo apt-get update >> terminal_install_logs.txt
+if ! [ -d "$HOME/.oh-my-zsh/" ] ; then
+    # Create Log FIle
+    # ---------------------------------------
+    sudo touch /opt/terminal_install_logs.txt
+    cd /opt/
 
 
-# Terminal Tools
-# ---------------------------------------
-echo "\n Installing - gedit"
-echo "\n Installing - gedit" >> terminal_install_logs.txt
-sudo apt-get install -y gedit >> terminal_install_logs.txt
-
-echo "\n Installing - terminator"
-echo "\n Installing - terminator" >> terminal_install_logs.txt
-sudo apt-get install -y terminator >> terminal_install_logs.txt
-
-echo "\n Installing - autojump"
-echo "\n Installing - autojump" >> terminal_install_logs.txt
-sudo apt-get install -y autojump >> terminal_install_logs.txt
-
-echo "\n Installing - tree"
-echo "\n Installing - tree" >> terminal_install_logs.txt
-sudo apt-get install -y tree >> terminal_install_logs.txt
-
-echo "\n Installing - acpi"
-echo "\n Installing - acpi" >> terminal_install_logs.txt
-sudo apt-get install -y acpi >> terminal_install_logs.txt
-
-echo "\n Installing - git"
-echo "\n Installing - git" >> terminal_install_logs.txt
-sudo apt-get install -y git >> terminal_install_logs.txt
+    # Update the System
+    # ---------------------------------------
+    echo "\n apt update"
+    echo "\n apt update" >> terminal_install_logs.txt
+    sudo apt-get update >> terminal_install_logs.txt
 
 
-# Install zsh
-# ---------------------------------------
-# 1. Use which zshto find your zsh location.
-#       $ which zsh
-#       /usr/bin/zsh
-# 2. Add /usr/bin/zsh to /etc/shells
-# 3. Check in /etc/passwd that your config is /usr/bin/zsh
-# 4. Run: chsh -s /usr/bin/zsh
-# ^^^ For DEBUGGIN ^^^^
-echo "\n Installing - zsh"
-echo "\n Installing - zsh" >> terminal_install_logs.txt
-sudo apt-get install -y zsh
+    # Terminal Tools
+    # ---------------------------------------
+    echo "\n Installing - gedit"
+    echo "\n Installing - gedit" >> terminal_install_logs.txt
+    sudo apt-get install -y gedit >> terminal_install_logs.txt
 
-echo "Current Shell - $SHELL"
-echo "Current Shell - $SHELL" >> terminal_install_logs.txt
+    echo "\n Installing - terminator"
+    echo "\n Installing - terminator" >> terminal_install_logs.txt
+    sudo apt-get install -y terminator >> terminal_install_logs.txt
 
-sudo echo "/usr/bin/zsh" >> /etc/shells
+    echo "\n Installing - autojump"
+    echo "\n Installing - autojump" >> terminal_install_logs.txt
+    sudo apt-get install -y autojump >> terminal_install_logs.txt
 
-sudo chsh -s "$(which zsh)" $USER
-sudo chsh -s /usr/bin/zsh $USER
+    echo "\n Installing - tree"
+    echo "\n Installing - tree" >> terminal_install_logs.txt
+    sudo apt-get install -y tree >> terminal_install_logs.txt
 
-chsh -s "$(which zsh)" $USER
-chsh -s /usr/bin/zsh $USER
+    echo "\n Installing - acpi"
+    echo "\n Installing - acpi" >> terminal_install_logs.txt
+    sudo apt-get install -y acpi >> terminal_install_logs.txt
 
-echo "Current Shell - $SHELL"
-echo "Current Shell - $SHELL" >> terminal_install_logs.txt
+    echo "\n Installing - git"
+    echo "\n Installing - git" >> terminal_install_logs.txt
+    sudo apt-get install -y git >> terminal_install_logs.txt
 
-exit
 
+    # Install zsh
+    # ---------------------------------------
+    # 1. Use which zshto find your zsh location.
+    #       $ which zsh
+    #       /usr/bin/zsh
+    # 2. Add /usr/bin/zsh to /etc/shells
+    # 3. Check in /etc/passwd that your config is /usr/bin/zsh
+    # 4. Run: chsh -s /usr/bin/zsh
+    # ^^^ For DEBUGGIN ^^^^
+    echo "\n Installing - zsh"
+    echo "\n Installing - zsh" >> terminal_install_logs.txt
+    sudo apt-get install -y zsh
+
+    echo "Current Shell - $SHELL"
+    echo "Current Shell - $SHELL" >> terminal_install_logs.txt
+
+    sudo echo "/usr/bin/zsh" >> /etc/shells
+
+    sudo chsh -s "$(which zsh)" $USER
+    sudo chsh -s /usr/bin/zsh $USER
+
+    chsh -s "$(which zsh)" $USER
+    chsh -s /usr/bin/zsh $USER
+
+    echo "Current Shell - $SHELL"
+    echo "Current Shell - $SHELL" >> terminal_install_logs.txt
+
+    exit
 fi
 
 # install Fonts
