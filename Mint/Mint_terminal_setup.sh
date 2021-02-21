@@ -1,7 +1,7 @@
 # Note
 # ---------------------------------------
 # Make sure file has needed perms
-# sudo chmod +x terminal_setup.sh
+# sudo chmod +x Mint_terminal_setup.sh
 
 # Create Log FIle
 # ---------------------------------------
@@ -13,34 +13,34 @@ cd /opt/
 # ---------------------------------------
 echo "\n apt update"
 echo "\n apt update" >> terminal_install_logs.txt
-sudo apt update >> terminal_install_logs.txt
+sudo apt-get update >> terminal_install_logs.txt
 
 
 # Terminal Tools
 # ---------------------------------------
 echo "\n Installing - gedit"
 echo "\n Installing - gedit" >> terminal_install_logs.txt
-sudo apt install -y gedit >> terminal_install_logs.txt
+sudo apt-get install -y gedit >> terminal_install_logs.txt
 
 echo "\n Installing - terminator"
 echo "\n Installing - terminator" >> terminal_install_logs.txt
-sudo apt install -y terminator >> terminal_install_logs.txt
+sudo apt-get install -y terminator >> terminal_install_logs.txt
 
 echo "\n Installing - autojump"
 echo "\n Installing - autojump" >> terminal_install_logs.txt
-sudo apt install -y autojump >> terminal_install_logs.txt
+sudo apt-get install -y autojump >> terminal_install_logs.txt
 
 echo "\n Installing - tree"
 echo "\n Installing - tree" >> terminal_install_logs.txt
-sudo apt install -y tree >> terminal_install_logs.txt
+sudo apt-get install -y tree >> terminal_install_logs.txt
 
 echo "\n Installing - acpi"
 echo "\n Installing - acpi" >> terminal_install_logs.txt
-sudo apt install -y acpi >> terminal_install_logs.txt
+sudo apt-get install -y acpi >> terminal_install_logs.txt
 
 echo "\n Installing - git"
 echo "\n Installing - git" >> terminal_install_logs.txt
-sudo apt install -y git >> terminal_install_logs.txt
+sudo apt-get install -y git >> terminal_install_logs.txt
 
 
 # Install zsh
@@ -54,7 +54,7 @@ sudo apt install -y git >> terminal_install_logs.txt
 # ^^^ For DEBUGGIN ^^^^
 echo "\n Installing - zsh"
 echo "\n Installing - zsh" >> terminal_install_logs.txt
-sudo apt install -y zsh >> terminal_install_logs.txt
+sudo apt-get install -y zsh >> terminal_install_logs.txt
 
 echo "Current Shell - $SHELL"
 echo "Current Shell - $SHELL" >> terminal_install_logs.txt
@@ -63,6 +63,9 @@ sudo echo "/usr/bin/zsh" >> /etc/shells
 
 sudo chsh -s "$(which zsh)" $USER
 sudo chsh -s /usr/bin/zsh $USER
+
+chsh -s "$(which zsh)" $USER
+chsh -s /usr/bin/zsh $USER
 
 echo "Current Shell - $SHELL"
 echo "Current Shell - $SHELL" >> terminal_install_logs.txt
@@ -74,8 +77,9 @@ echo "\n Installing - oh-my-zsh" >> terminal_install_logs.txt
 sudo wget -P /opt/OhMyZSH/ https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh >> terminal_install_logs.txt
 cd /opt/OhMyZSH/
 sudo chmod +x /opt/OhMyZSH/install.sh
-./install.sh >> terminal_install_logs.txt
+./install.sh 
 
+exit
 
 # install Fonts
 # ---------------------------------------
