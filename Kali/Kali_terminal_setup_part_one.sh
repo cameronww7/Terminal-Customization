@@ -3,13 +3,6 @@
 # Make sure file has needed perms
 # sudo chmod +x Kali_terminal_setup.sh
 
-
-# Create Log FIle
-# ---------------------------------------
-sudo touch /opt/Kali_terminal_install_logs.txt
-cd /opt/
-
-
 # Update the System
 # ---------------------------------------
 echo "\n apt update"
@@ -38,10 +31,6 @@ sudo apt-get install -y tree >> /opt/Kali_terminal_install_logs.txt
 echo "\n Installing - acpi"
 echo "\n Installing - acpi" >> /opt/Kali_terminal_install_logs.txt
 sudo apt-get install -y acpi >> /opt/Kali_terminal_install_logs.txt
-
-echo "\n Installing - git"
-echo "\n Installing - git" >> /opt/Kali_terminal_install_logs.txt
-sudo apt-get install -y git >> /opt/Kali_terminal_install_logs.txt
 
 
 # install Fonts
@@ -75,6 +64,7 @@ echo "\n Installing - zsh"
 echo "\n Installing - zsh" >> /opt/Kali_terminal_install_logs.txt
 sudo apt-get install -y zsh
 
+sudo chsh -s $(which zsh) $USER
 
 echo "\n Reload Now Load Part 2" 
 

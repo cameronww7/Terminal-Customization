@@ -7,17 +7,14 @@
 # ---------------------------------------
 # add highlighting
 echo "\n Installing - highlighting"
-echo "\n Installing - highlighting" >> /opt/Kali_terminal_install_logs.txt
 sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$USER/.oh-my-zsh/plugins/zsh-syntax-highlighting 
 
 # add auto-suggester
 echo "\n Installing - auto-suggester"
-echo "\n Installing - auto-suggester" >> /opt/Kali_terminal_install_logs.txt
 sudo git clone https://github.com/zsh-users/zsh-autosuggestions /home/$USER/.oh-my-zsh/plugins/zsh-autosuggestions 
 
 # install k
 echo "\n Installing - k"
-echo "\n Installing - k" >> /opt/Kali_terminal_install_logs.txt
 sudo git clone https://github.com/supercrabtree/k /home/$USER/.oh-my-zsh/plugins/k 
 # install powerlevel9k
 echo "\n Installing - powerlevel9k"
@@ -27,7 +24,6 @@ sudo git clone https://github.com/bhilburn/powerlevel9k.git /home/$USER/.oh-my-z
 
 # Install .zshrc file 
 echo "\n Installing - .zshrc"
-echo "\n Installing - .zshrc" >> /opt/Kali_terminal_install_logs.txt
 # ---------------------------------------
 sudo cat /opt/Terminal-Customization/Kali/.zshrc > ~/.zshrc
 
