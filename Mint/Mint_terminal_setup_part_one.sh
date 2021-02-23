@@ -5,42 +5,42 @@
 
 # Update the System
 # ---------------------------------------
-echo "\n apt update"
+echo "\n\n\n apt update \n"
 sudo apt-get update
 
 
 # Terminal Tools
 # ---------------------------------------
-echo "\n Installing - gedit"
+echo "\n\n\n Installing - gedit \n"
 
 sudo apt-get install -y gedit
 
-echo "\n Installing - terminator"
+echo "\n\n\n Installing - terminator \n"
 sudo apt-get install -y terminator
 
-echo "\n Installing - autojump"
+echo "\n\n\n Installing - autojump \n"
 sudo apt-get install -y autojump
 
-echo "\n Installing - tree"
+echo "\n\n\n Installing - tree \n"
 
 sudo apt-get install -y tree
 
-echo "\n Installing - acpi"
+echo "\n\n\n Installing - acpi \n"
 sudo apt-get install -y acpi 
 
 
 # install Fonts
 # ---------------------------------------
-echo "\n Installing - fonts-powerline"
+echo "\n\n\n Installing - fonts-powerline \n"
 sudo apt-get install -y fonts-powerline
 
-echo "\n Installing - fonts-hack"
+echo "\n\n\n Installing - fonts-hack \n"
 sudo apt-get install -y fonts-hack
 
-echo "\n Installing - fonts-font-awesome"
+echo "\n\n\n Installing - fonts-font-awesome \n"
 sudo apt-get install -y fonts-font-awesome
 
-echo "\n Installing - fonts-powerlinesymbols"
+echo "\n\n\n Installing - fonts-powerlinesymbols \n"
 sudo apt-get install -y fonts-powerlinesymbols
 
 # Install zsh
@@ -52,10 +52,10 @@ sudo apt-get install -y fonts-powerlinesymbols
 # 3. Check in /etc/passwd that your config is /usr/bin/zsh
 # 4. Run: chsh -s /usr/bin/zsh
 # ^^^ For DEBUGGIN ^^^^
-echo "\n Installing - zsh"
+echo "\n\n\n Installing - zsh \n"
 sudo apt-get install -y zsh
 
 
-echo "\n\n\n Now install OH MY ZSH and then do Part 2 after install of Oh-My-ZSH" 
+echo "\n\n\n\n\n\n\n\n\n Now install OH MY ZSH and then do Part 2 after install of Oh-My-ZSH \n" 
 
-echo "\n\n [END] \n\n"
+echo "\n\n\n\n\n\n [END] \n\n\n\n\n\n"
