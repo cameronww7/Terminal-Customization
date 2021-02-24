@@ -264,7 +264,6 @@ alias ll='k'
 alias la='k -A'
 alias l='ls -CF'
 alias his='history'
-alias nmapAutomator='/opt/nmapAutomator/nmapAutomator.sh'
 
 # force zsh to show the complete history
 alias history="history 0"

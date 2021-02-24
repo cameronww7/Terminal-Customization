@@ -22,13 +22,18 @@ sudo git clone https://github.com/bhilburn/powerlevel9k.git /home/$USER/.oh-my-z
 
 
 # Install .zshrc file 
-echo "\n\n\n Installing - .zshrc \n"
 # ---------------------------------------
-sudo cat /opt/Terminal-Customization/Mint/.zshrc > ~/.zshrc
-
+echo "\n\n\n Installing - .zshrc file \n"
+sudo cat /opt/Terminal-Customization/Kali/.zshrc > ~/.zshrc
 sudo source ~/.zshrc
-
 sudo chsh -s $(which zsh) $USER
+
+# Install .tmux.conf file 
+# ---------------------------------------
+echo "\n\n\n Installing - .tmux.conf file \n"
+sudo cat /opt/Terminal-Customization/Kali/.tmux.conf > ~/.tmux.conf
+tmux source-file ~/.tmux.conf
+
 
 # Add Plugin Update Code to Update File
 # https://unix.stackexchange.com/questions/477258/how-to-auto-update-custom-plugins-in-oh-my-zsh

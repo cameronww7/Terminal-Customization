@@ -14,9 +14,6 @@ sudo apt-get update
 echo "\n\n\n Installing - gedit \n"
 sudo apt-get install -y gedit
 
-echo "\n\n\n Installing - terminator \n"
-sudo apt-get install -y terminator
-
 echo "\n\n\n Installing - autojump \n"
 sudo apt-get install -y autojump
 
@@ -26,6 +23,16 @@ sudo apt-get install -y tree
 echo "\n\n\n Installing - acpi \n"
 sudo apt-get install -y acpi
 
+echo "\n\n\n Installing - terminator \n"
+sudo apt-get install -y terminator
+
+echo "\n\n\n Installing - tmux \n"
+sudo apt-get install -y tmux
+
+echo "\n\n\n Installing - tmux-logging \n"
+sudo git clone https://github.com/tmux-plugins/tmux-logging /opt/tmux-logging/
+
+touch ~/.tmux.conf
 
 # install Fonts
 # ---------------------------------------

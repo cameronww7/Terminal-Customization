@@ -1,22 +1,6 @@
-# Kali Terminal-Customization
+# Terminal-Customization
 
-1. Clone Terminal-Customization Repo
-   1. `sudo git clone https://github.com/cameronww7/Terminal-Customization /opt/Terminal-Customization/`
+This repo has two different installs, one for Kali and one for Linux Mint
 
-2. CD to `cd /opt/Terminal-Customization/Mint/`
-   
-3. chmod install Mint_terminal_setup.sh
-   1. `sudo chmod +x Kali_terminal_setup.sh`
-
-4. run install script
-   1. `sudo ./Kali_terminal_setup.sh`
-   2. Will Exit (Thats good)
-
-5. Install ohmyzsh
-   1. cd to `cd ~/Downloads`
-   2. run this in Downloads`sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-
-6. CD to `cd /opt/Terminal-Customization/Kali/`
-
-7. Re-Run Install Script
-   1. `sudo ./Kali_terminal_setup.sh`
+This is only Version 1, I plan to fix both up and make a more streamlined
+set of scripts. But you know... Time, will get to it when i can.

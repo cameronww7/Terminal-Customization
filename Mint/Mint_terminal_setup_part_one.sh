@@ -12,22 +12,27 @@ sudo apt-get update
 # Terminal Tools
 # ---------------------------------------
 echo "\n\n\n Installing - gedit \n"
-
 sudo apt-get install -y gedit
-
-echo "\n\n\n Installing - terminator \n"
-sudo apt-get install -y terminator
 
 echo "\n\n\n Installing - autojump \n"
 sudo apt-get install -y autojump
 
 echo "\n\n\n Installing - tree \n"
-
 sudo apt-get install -y tree
 
 echo "\n\n\n Installing - acpi \n"
-sudo apt-get install -y acpi 
+sudo apt-get install -y acpi
 
+echo "\n\n\n Installing - terminator \n"
+sudo apt-get install -y terminator
+
+echo "\n\n\n Installing - tmux \n"
+sudo apt-get install -y tmux
+
+echo "\n\n\n Installing - tmux-logging \n"
+sudo git clone https://github.com/tmux-plugins/tmux-logging /opt/tmux-logging/
+
+touch ~/.tmux.conf
 
 # install Fonts
 # ---------------------------------------
