@@ -22,7 +22,7 @@
 7. chmod install Mint_terminal_setup.sh
    1. `sudo chmod +x Mint_terminal_setup_part_two.sh`
 
-8.  Run Install Script Part 2
-   1. *(DO NOT RUN AS SUDO, enter Password if Prompted)*
-   2. `./Mint_terminal_setup_part_two.sh`
-   3. You will get prompted for your password
+8. Run Install Script Part 2
+    1. *(DO NOT RUN AS SUDO, enter Password if Prompted)*
+    2. `./Kali_terminal_setup_part_two.sh`
+    3. You will get prompted for your password
