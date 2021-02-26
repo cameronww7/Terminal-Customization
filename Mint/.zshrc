@@ -136,7 +136,8 @@ POWERLEVEL9K_BATTERY_STAGES=(
    $'███  ▏' $'███▎ ▏' $'███▍ ▏' $'███▌ ▏' $'███▋ ▏' $'███▊ ▏' $'███▉ ▏' $'████ ▏'
    $'████ ▏' $'████▎▏' $'████▍▏' $'████▌▏' $'████▋▏' $'████▊▏' $'████▉▏' $'█████▏' )
 
-POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND=(red1 orangered1 darkorange orange1 gold1 yellow1 yellow2 greenyellow chartreuse1 chartreuse2 green1)
+POWERLEVEL9K_BATTERY_LEVEL_FOREGROUND=(red3 darkorange3 darkgoldenrod gold3 yellow3 chartreuse2 mediumspringgreen green3 green3 green4 darkgreen)
+POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND='black'
 
 # ***** STATUS *****
 # Return status on the left, turns red if an error
