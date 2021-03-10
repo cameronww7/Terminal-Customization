@@ -34,6 +34,8 @@ echo "\n\n\n Installing - .tmux.conf file \n"
 sudo cat /opt/Terminal-Customization/Kali/.tmux.conf > ~/.tmux.conf
 tmux source-file ~/.tmux.conf
 
+# Setup my File Strucutres 
+sudo chmod -R 777 /opt 
 
 # Add Plugin Update Code to Update File
 # https://unix.stackexchange.com/questions/477258/how-to-auto-update-custom-plugins-in-oh-my-zsh
