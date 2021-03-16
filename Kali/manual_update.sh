@@ -3,8 +3,11 @@
 # Make sure file has needed perms
 # chmod +x terminal_setup.sh
 
-sudo touch /opt/manual_update_logs.txt
-cd /opt/
+
+echo "\n Updating - Terminal-Customization"
+cd /opt/Terminal-Customization
+sudo git fetch -A 
+sudo git pull 
 
 
 # Updating Plugins
@@ -41,11 +44,6 @@ sudo git pull
 
 # Updating .zshrc file 
 # ---------------------------------------
-echo "\n Updating - Terminal-Customization"
-cd /opt/Terminal-Customization
-sudo git fetch -A 
-sudo git pull 
-
 sudo cat /opt/Terminal-Customization/Kali/.zshrc > ~/.zshrc
 
 sudo source ~/.zshrc

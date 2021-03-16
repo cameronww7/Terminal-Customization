@@ -4,6 +4,13 @@
 # chmod +x terminal_setup.sh
 
 
+echo "\n Updating - Terminal-Customization"
+echo "\n Updating - Terminal-Customization" 
+cd /opt/Terminal-Customization
+sudo git fetch -A 
+sudo git pull 
+
+
 # Updating Plugins
 # ---------------------------------------
 # Updating highlighting
@@ -38,12 +45,6 @@ sudo git pull
 
 # Updating .zshrc file 
 # ---------------------------------------
-echo "\n Updating - Terminal-Customization"
-echo "\n Updating - Terminal-Customization" 
-cd /opt/Terminal-Customization
-sudo git fetch -A 
-sudo git pull 
-
 sudo cat /opt/Terminal-Customization/Mint/.zshrc > ~/.zshrc
 
 sudo source ~/.zshrc
