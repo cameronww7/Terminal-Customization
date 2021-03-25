@@ -27,12 +27,6 @@ echo "\n\n\n Installing - .zshrc file \n"
 sudo cat /opt/Terminal-Customization/Kali/.zshrc > ~/.zshrc
 sudo source ~/.zshrc
 
-# Install .tmux.conf file 
-# ---------------------------------------
-echo "\n\n\n Installing - .tmux.conf file \n"
-sudo cat /opt/Terminal-Customization/Kali/.tmux.conf > ~/.tmux.conf
-tmux source-file ~/.tmux.conf
-
 
 # Setup my File Strucutres 
 sudo mkdir ~/Hacking

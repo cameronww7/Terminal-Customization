@@ -28,11 +28,6 @@ sudo cat /opt/Terminal-Customization/Mint/.zshrc > ~/.zshrc
 sudo source ~/.zshrc
 sudo chsh -s $(which zsh) $USER
 
-# Install .tmux.conf file 
-# ---------------------------------------
-echo "\n\n\n Installing - .tmux.conf file \n"
-sudo cat /opt/Terminal-Customization/Mint/.tmux.conf > ~/.tmux.conf
-tmux source-file ~/.tmux.conf
 
 # Setup my File Strucutres 
 sudo chmod -R 777 /opt 
