@@ -34,14 +34,14 @@ POWERLEVEL9K_MODE="awesome-fontconfig"
 prompt_zsh_internet_signal(){
   local symbol="\uf7ba"
   local strength=`iwconfig wlp5s0 | grep -i "link quality" | grep -o "[0-9]*/[0-9]*"`
-  
+
   echo -n "%F{white}\uE0B3 $symbol $strength"
 }
 
 # ***** TryHarder Display *****
 prompt_tryHarder() {
-    local content='%F{46}\uF17C TryHard3r'
-    $1_prompt_segment "$0" "$2" "black" "white" "$content" "#"
+  local content='%F{46}\uF17C TryHard3r'
+  $1_prompt_segment "$0" "$2" "black" "white" "$content" "#"
 }
 # ---------------------------------------
 
@@ -223,3 +223,7 @@ alias his='history'
 # force zsh to show the complete history
 alias history="history 0"
 # ---------------------------------------
+
+
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin

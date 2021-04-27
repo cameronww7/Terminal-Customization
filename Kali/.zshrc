@@ -270,4 +270,7 @@ alias his='history'
 alias history="history 0"
 # ---------------------------------------
 
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
