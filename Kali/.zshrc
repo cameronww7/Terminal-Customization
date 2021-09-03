@@ -75,6 +75,11 @@ prompt_zsh_internet_signal(){
   echo -n "%F{white}\uE0B3 $symbol $strength"
 }
 
+prompt_vpnip(){
+  local content="$(ip addr show tun0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)"
+  $1_prompt_segment "$0" "$2" "black" "green1" "VPN-$content" "#"
+}
+
 # ***** TryHarder Display *****
 prompt_tryHarder() {
     local content='%F{46}\uF17C TryHard3r'
@@ -85,6 +90,10 @@ prompt_tryHarder() {
 
 # ***** Setup Powerline9k *****
 # ---------------------------------------
+# ***** VPNIP *****
+POWERLINE9K_VPNIP_DEFAULT_BACKGROUND='black'
+POWERLINE9K_VPNIP_DEFAULT_FOREGROUND='green1'
+
 # ***** TryHarder *****
 POWERLINE9K_TRYHARDER_DEFAULT_BACKGROUND='black'
 POWERLINE9K_TRYHARDER_DEFAULT_FOREGROUND='green1'
@@ -195,7 +204,7 @@ DISABLE_UPDATE_PROMPT=true
 
 # ***** Command Line Display Prompts *****
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(tryHarder custom_internet_signal ssh root_indicator dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vpn_ip context time battery)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vpnip context time battery)
 # ---------------------------------------
 
 
