@@ -70,13 +70,13 @@ POWERLEVEL9K_MODE="awesome-fontconfig"
 # ***** Internet Signal Display *****
 prompt_zsh_internet_signal(){
   local symbol="\uf7ba"
-  local strength=`iwconfig wlp5s0 | grep -i "link quality" | grep -o "[0-9]*/[0-9]*"`
+  local strength="iwconfig wlp5s0 | grep -i 'link quality' | grep -o '[0-9]*/[0-9]*'"
   
   echo -n "%F{white}\uE0B3 $symbol $strength"
 }
 
 prompt_vpnip(){
-  local content="$(ip addr show tun0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)"
+  local content="$(ip addr show tun0 | grep 'inet\b' | awk '{print $2}' | cut -d/ -f1)"
   $1_prompt_segment "$0" "$2" "black" "green1" "$content" "#"
 }
 
