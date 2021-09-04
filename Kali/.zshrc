@@ -204,7 +204,7 @@ DISABLE_UPDATE_PROMPT=true
 
 # ***** Command Line Display Prompts *****
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(tryHarder custom_internet_signal ssh root_indicator dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vpnip context time battery)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vpnip ip context time battery)
 # ---------------------------------------
 
 
