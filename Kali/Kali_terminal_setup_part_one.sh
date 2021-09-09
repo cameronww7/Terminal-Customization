@@ -26,13 +26,13 @@ sudo apt-get install -y acpi
 echo "\n\n\n Installing - terminator \n"
 sudo apt-get install -y terminator
 
-echo "\n\n\n Installing - tmux \n"
-sudo apt-get install -y tmux
+#echo "\n\n\n Installing - tmux \n"
+#sudo apt-get install -y tmux
 
-echo "\n\n\n Installing - tmux-logging \n"
-sudo git clone https://github.com/tmux-plugins/tmux-logging /opt/tmux-logging/
+#echo "\n\n\n Installing - tmux-logging \n"
+#sudo git clone https://github.com/tmux-plugins/tmux-logging /opt/tmux-logging/
 
-touch ~/.tmux.conf
+#touch ~/.tmux.conf
 
 # install Fonts
 # ---------------------------------------
