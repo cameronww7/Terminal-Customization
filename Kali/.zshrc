@@ -76,7 +76,14 @@ prompt_zsh_internet_signal(){
 }
 
 prompt_vpnip(){
-  local content="$(ip addr show tun0 | grep 'inet\b' | awk '{print $2}' | cut -d/ -f1)"
+  for i in tun0
+    do OUT="$(ip a show $i up 2>&1)";
+      if [[ $OUT == *"does not exist."* ]]; then
+        local content="No-VPN"
+      else
+        local content="$(ip addr show tun0 | grep 'inet\b' | awk '{print $2}' | cut -d/ -f1)" 
+      fi
+  done
   $1_prompt_segment "$0" "$2" "black" "green1" "$content" "#"
 }
 
