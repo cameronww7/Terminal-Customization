@@ -2,7 +2,7 @@
 
 # ***** Path to your oh-my-zsh installation *****
 # ---------------------------------------
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/home/$USER/.oh-my-zsh"
 export TERM="xterm-256color"
 # ---------------------------------------
 
@@ -70,9 +70,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# Also see for status - https://gitmemory.com/issue/bhilburn/powerlevel10K/501/500341341
-ZSH_THEME="powerlevel10K/powerlevel10K"
-POWERLEVEL10K_MODE="awesome-fontconfig"
+# Also see for status - https://gitmemory.com/issue/bhilburn/POWERLEVEL9K/501/500341341
+ZSH_THEME="POWERLEVEL9K/POWERLEVEL9K"
+POWERLEVEL9K_MODE="awesome-fontconfig"
 # ---------------------------------------
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -103,129 +103,129 @@ prompt_vpnip(){
 
 # ***** TryHarder Display *****
 prompt_tryHarder() {
-    local content='%F{46}\uF17C ㉿ TryHard3r'
+    local content='%F{46}\uF17C TryHard3r'
     $1_prompt_segment "$0" "$2" "black" "white" "$content" "#"
 }
 # ---------------------------------------
 
 
-# ***** Setup Powerline10K *****
+# ***** Setup POWERLEVEL9K *****
 # ---------------------------------------
 # ***** VPNIP *****
-POWERLINE10K_VPNIP_DEFAULT_BACKGROUND='black'
-POWERLINE10K_VPNIP_DEFAULT_FOREGROUND='green1'
+POWERLEVEL9K_VPNIP_DEFAULT_BACKGROUND='black'
+POWERLEVEL9K_VPNIP_DEFAULT_FOREGROUND='green1'
 
 # ***** TryHarder *****
-POWERLINE10K_TRYHARDER_DEFAULT_BACKGROUND='black'
-POWERLINE10K_TRYHARDER_DEFAULT_FOREGROUND='green1'
+POWERLEVEL9K_TRYHARDER_DEFAULT_BACKGROUND='black'
+POWERLEVEL9K_TRYHARDER_DEFAULT_FOREGROUND='green1'
 
 # ***** os_icon *****
-POWERLEVEL10K_OS_ICON_BACKGROUND="black"
-POWERLEVEL10K_OS_ICON_FOREGROUND="green1"
-POWERLEVEL10K_OS_ICON_VISUAL_IDENTIFIER_COLOR="green1"
+POWERLEVEL9K_OS_ICON_BACKGROUND="black"
+POWERLEVEL9K_OS_ICON_FOREGROUND="green1"
+POWERLEVEL9K_OS_ICON_VISUAL_IDENTIFIER_COLOR="green1"
 
 # ***** DIR *****
-POWERLEVEL10K_SHORTEN_DIR_LENGTH=4
-POWERLEVEL10K_SHORTEN_STRATEGY="truncate_beginning"
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_beginning"
 
-POWERLEVEL10K_DIR_DEFAULT_BACKGROUND='green1'
-POWERLEVEL10K_DIR_DEFAULT_FOREGROUND='black'
-POWERLEVEL10K_DIR_DEFAULT_VISUAL_IDENTIFIER_COLOR="black"
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='green1'
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='black'
+POWERLEVEL9K_DIR_DEFAULT_VISUAL_IDENTIFIER_COLOR="black"
 
-POWERLEVEL10K_DIR_HOME_BACKGROUND="black"
-POWERLEVEL10K_DIR_HOME_FOREGROUND="green1"
-POWERLEVEL10K_DIR_HOME_VISUAL_IDENTIFIER_COLOR="green1"
+POWERLEVEL9K_DIR_HOME_BACKGROUND="black"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="green1"
+POWERLEVEL9K_DIR_HOME_VISUAL_IDENTIFIER_COLOR="green1"
 
-POWERLEVEL10K_DIR_HOME_SUBFOLDER_BACKGROUND="green1"
-POWERLEVEL10K_DIR_HOME_SUBFOLDER_FOREGROUND="black"
-POWERLEVEL10K_DIR_HOME_SUBFOLDER_VISUAL_IDENTIFIER_COLOR="black"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="green1"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="black"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_VISUAL_IDENTIFIER_COLOR="black"
 
 # ***** RVM *****
-POWERLEVEL10K_RVM_BACKGROUND="black"
-POWERLEVEL10K_RVM_FOREGROUND="249"
-POWERLEVEL10K_RVM_VISUAL_IDENTIFIER_COLOR="red"
+POWERLEVEL9K_RVM_BACKGROUND="black"
+POWERLEVEL9K_RVM_FOREGROUND="249"
+POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
 
 # ***** Time *****
-POWERLEVEL10K_TIME_BACKGROUND="black"
-POWERLEVEL10K_TIME_FOREGROUND="green1"
-POWERLEVEL10K_TIME_FORMAT="%D{\UF133 %m.%d.%y}-%@"
+POWERLEVEL9K_TIME_BACKGROUND="black"
+POWERLEVEL9K_TIME_FOREGROUND="green1"
+POWERLEVEL9K_TIME_FORMAT="%D{\UF133 %m.%d.%y}-%@"
 
 # ***** VCS *****
 # Git status - White Means its GTG
-POWERLEVEL10K_VCS_CLEAN_FOREGROUND='black'
-POWERLEVEL10K_VCS_CLEAN_BACKGROUND='white'
-POWERLEVEL10K_VCS_CLEAN_VISUAL_IDENTIFIER_COLOR="black"
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='white'
+POWERLEVEL9K_VCS_CLEAN_VISUAL_IDENTIFIER_COLOR="black"
 
 # Git status - Orange means its untracked
-POWERLEVEL10K_VCS_UNTRACKED_FOREGROUND='black'
-POWERLEVEL10K_VCS_UNTRACKED_BACKGROUND='orange'
-POWERLEVEL10K_VCS_UNTRACKED_IDENTIFIER_COLOR="black"
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='orange'
+POWERLEVEL9K_VCS_UNTRACKED_IDENTIFIER_COLOR="black"
 
 # Git status - Yellow means it was modified and needs to be checked in
-POWERLEVEL10K_VCS_MODIFIED_FOREGROUND='black'
-POWERLEVEL10K_VCS_MODIFIED_BACKGROUND='yellow'
-POWERLEVEL10K_VCS_MODIFIED_IDENTIFIER_COLOR="black"
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
+POWERLEVEL9K_VCS_MODIFIED_IDENTIFIER_COLOR="black"
 
-POWERLEVEL10K_VCS_HIDE_TAGS='false'
+POWERLEVEL9K_VCS_HIDE_TAGS='false'
 
 # ***** VCS Icons *****
-#POWERLEVEL10K_VCS_UNTRACKED_ICON='\u25CF'
-#POWERLEVEL10K_VCS_UNSTAGED_ICON='\u00b1'
-#POWERLEVEL10K_VCS_INCOMING_CHANGES_ICON='\u2193'
-#POWERLEVEL10K_VCS_OUTGOING_CHANGES_ICON='\u2191'
-#POWERLEVEL10K_VCS_COMMIT_ICON="\uf417"
+#POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
+#POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
+#POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
+#POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
+#POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
 
 # ***** Command Execution Time *****
-POWERLEVEL10K_COMMAND_EXECUTION_TIME_BACKGROUND='black'
-POWERLEVEL10K_COMMAND_EXECUTION_TIME_FOREGROUND='white'
-POWERLEVEL10K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='black'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='white'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
 
 # ***** Context *****
 # Is the current user
-POWERLEVEL10K_CONTEXT_TEMPLATE="%n💀%m"
-POWERLEVEL10K_CONTEXT_DEFAULT_BACKGROUND='black'
-POWERLEVEL10K_CONTEXT_DEFAULT_FOREGROUND='green1'
+POWERLEVEL9K_CONTEXT_TEMPLATE="%n💀%m"
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND='black'
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='green1'
 
 # ***** Prompt *****
 # Prompt line, the arrow that goes from the first to second line
-POWERLEVEL10K_PROMPT_ON_NEWLINE=true
-POWERLEVEL10K_PROMPT_ADD_NEWLINE=false
-POWERLEVEL10K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 
-POWERLEVEL10K_MULTILINE_FIRST_PROMPT_PREFIX="%F{46}\u256D\u2500%f"
-POWERLEVEL10K_MULTILINE_LAST_PROMPT_PREFIX="%F{46}└─▶ "
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{46}\u256D\u2500%f"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{46}└─▶ "
 
 # ***** Battery *****
-POWERLEVEL10K_BATTERY_STAGES=(
+POWERLEVEL9K_BATTERY_STAGES=(
    $'▏    ▏' $'▎    ▏' $'▍    ▏' $'▌    ▏' $'▋    ▏' $'▊    ▏' $'▉    ▏' $'█    ▏'
    $'█▏   ▏' $'█▎   ▏' $'█▍   ▏' $'█▌   ▏' $'█▋   ▏' $'█▊   ▏' $'█▉   ▏' $'██   ▏'
    $'██   ▏' $'██▎  ▏' $'██▍  ▏' $'██▌  ▏' $'██▋  ▏' $'██▊  ▏' $'██▉  ▏' $'███  ▏'
    $'███  ▏' $'███▎ ▏' $'███▍ ▏' $'███▌ ▏' $'███▋ ▏' $'███▊ ▏' $'███▉ ▏' $'████ ▏'
    $'████ ▏' $'████▎▏' $'████▍▏' $'████▌▏' $'████▋▏' $'████▊▏' $'████▉▏' $'█████▏' )
 
-POWERLEVEL10K_BATTERY_LEVEL_FOREGROUND=(red3 darkorange3 darkgoldenrod gold3 yellow3 chartreuse2 mediumspringgreen green3 green3 green4 green1)
-POWERLEVEL10K_BATTERY_LEVEL_BACKGROUND='black'
+POWERLEVEL9K_BATTERY_LEVEL_FOREGROUND=(red3 darkorange3 darkgoldenrod gold3 yellow3 chartreuse2 mediumspringgreen green3 green3 green4 green1)
+POWERLEVEL9K_BATTERY_LEVEL_BACKGROUND='black'
 
 # ***** STATUS *****
 # Return status on the left, turns red if an error
-POWERLEVEL10K_STATUS_VERBOSE=true
-POWERLEVEL10K_STATUS_OK_IN_NON_VERBOSE=true
+POWERLEVEL9K_STATUS_VERBOSE=true
+POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
 
-POWERLEVEL10K_STATUS_ERROR_BACKGROUND="red"
-POWERLEVEL10K_STATUS_ERROR_FOREGROUND="black"
-#POWERLEVEL10K_STATUS_ERROR_VISUAL_IDENTIFIER_COLOR="⨯"
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND="red"
+POWERLEVEL9K_STATUS_ERROR_FOREGROUND="black"
+#POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_COLOR="⨯"
 
-POWERLEVEL10K_STATUS_OK_BACKGROUND="green1"						
-POWERLEVEL10K_STATUS_OK_FOREGROUND="black"						
-POWERLEVEL10K_STATUS_OK_VISUAL_IDENTIFIER_COLOR=""
+POWERLEVEL9K_STATUS_OK_BACKGROUND="green1"						
+POWERLEVEL9K_STATUS_OK_FOREGROUND="black"						
+POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_COLOR=""
 
 # ***** Other *****
-POWERLEVEL10K_FOLDER_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
 DISABLE_UPDATE_PROMPT=true
 
 # ***** Command Line Display Prompts *****
-POWERLEVEL10K_LEFT_PROMPT_ELEMENTS=(tryHarder root_indicator dir dir_writable vcs)
-POWERLEVEL10K_RIGHT_PROMPT_ELEMENTS=(status vpnip ip context time battery)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(tryHarder root_indicator dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vpnip ip context time battery)
 # ---------------------------------------
 
 
@@ -280,7 +280,7 @@ TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
 
 # ***** Sources ZSH *****
 # ---------------------------------------
-#source "$ZSH/oh-my-zsh.sh"
+source "$ZSH/oh-my-zsh.sh"
 
 
 # ***** User configuration *****

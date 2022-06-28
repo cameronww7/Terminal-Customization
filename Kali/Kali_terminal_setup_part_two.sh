@@ -16,9 +16,12 @@ sudo git clone https://github.com/zsh-users/zsh-autosuggestions /home/$USER/.oh-
 # install k
 echo "\n\n\n Installing - k"
 sudo git clone https://github.com/supercrabtree/k /home/$USER/.oh-my-zsh/plugins/k 
+
 # install powerlevel9k
 echo "\n\n\n Installing - powerlevel9k \n"
-sudo git clone https://github.com/bhilburn/powerlevel9k.git /home/$USER/.oh-my-zsh/custom/themes/powerlevel9k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
 
 
 # Install .zshrc file 
