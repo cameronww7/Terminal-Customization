@@ -63,7 +63,8 @@
           "template": " {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
           "properties": {
             "branch_icon": " ",
-            "fetch_status": true
+            "fetch_status": true,
+            "native_fallback": true
           }
         }
       ]
