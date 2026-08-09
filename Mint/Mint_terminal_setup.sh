@@ -20,6 +20,11 @@ sudo apt-get update
 
 
 # --- Install terminal tools --------------------------------------------------
+printf "\n\n\n Installing - git \n"
+# You already needed git to clone this repo, but installing it explicitly here
+# means this script also works if you got the repo some other way (zip download, etc)
+sudo apt-get install -y git
+
 printf "\n\n\n Installing - gedit \n"
 sudo apt-get install -y gedit
 

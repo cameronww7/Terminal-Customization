@@ -11,7 +11,7 @@
         {
           "type": "text",
           "style": "diamond",
-          "leading_diamond": "<transparent,background></>",
+          "leading_diamond": "<background,transparent></>",
           "trailing_diamond": "<background,transparent></>",
           "background": "#00FF41",
           "foreground": "#000000",
@@ -27,31 +27,28 @@
           "template": "{{ if .WSL }}WSL:{{ end }}{{ .Icon }}"
         },
         {
-          "type": "root",
-          "style": "diamond",
-          "leading_diamond": "<transparent,background></>",
-          "trailing_diamond": "<background,transparent></>",
-          "background": "#132913",
-          "foreground": "#FFFF00",
-          "template": "  "
-        },
-        {
           "type": "session",
           "style": "diamond",
           "leading_diamond": "<transparent,background></>",
           "trailing_diamond": "<background,transparent></>",
           "background": "#0D1F0D",
           "foreground": "#00FF41",
-          "template": " {{ .UserName }}@{{ .HostName }}"
+          "background_templates": [
+            "{{ if eq .UserName \"root\" }}#FFD400{{ end }}"
+          ],
+          "foreground_templates": [
+            "{{ if eq .UserName \"root\" }}#000000{{ end }}"
+          ],
+          "template": "{{ if eq .UserName \"root\" }}ROOT{{ else }}USER{{ end }}"
         },
         {
           "type": "path",
           "style": "diamond",
           "leading_diamond": "<transparent,background></>",
           "trailing_diamond": "<background,transparent></>",
-          "background": "#008F11",
+          "background": "#0A2E28",
           "foreground": "#00FF41",
-          "template": " {{ .Path }}",
+          "template": "  {{ .Path }}",
           "properties": {
             "style": "folder"
           }
@@ -61,11 +58,12 @@
           "style": "diamond",
           "leading_diamond": "<transparent,background></>",
           "trailing_diamond": "<background,transparent></>",
-          "background": "#132913",
+          "background": "#0F3830",
           "foreground": "#00FF41",
-          "template": "{{ .HEAD }}{{ if .Working.Changed }} ~{{ .Working.String }}{{ end }}{{ if .Staging.Changed }} +{{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
+          "template": " {{ .HEAD }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
           "properties": {
-            "branch_icon": " "
+            "branch_icon": " ",
+            "fetch_status": true
           }
         }
       ]
@@ -76,26 +74,11 @@
       "overflow": "hide",
       "segments": [
         {
-          "type": "status",
-          "style": "diamond",
-          "leading_diamond": "<background,transparent></>",
-          "trailing_diamond": "<transparent,background></>",
-          "background": "#0D1F0D",
-          "foreground": "#00FF41",
-          "template": "{{ if gt .Code 0 }} {{ .Code }}{{ else }}{{ end }}",
-          "background_templates": [
-            "{{ if gt .Code 0 }}#590000{{ end }}"
-          ],
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#FFFFFF{{ end }}"
-          ]
-        },
-        {
           "type": "battery",
           "style": "diamond",
           "leading_diamond": "<background,transparent></>",
           "trailing_diamond": "<transparent,background></>",
-          "background": "#132913",
+          "background": "#241F0A",
           "foreground": "#00FF41",
           "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}",
           "foreground_templates": [
@@ -104,7 +87,7 @@
             "{{if true}}#FF0000{{end}}"
           ],
           "properties": {
-            "charged_icon": " ",
+            "charged_icon": " ",
             "charging_icon": "⇡ ",
             "discharging_icon": "⇣ "
           }
@@ -113,9 +96,9 @@
           "type": "time",
           "style": "diamond",
           "leading_diamond": "<background,transparent></>",
-          "trailing_diamond": "<transparent,background></>",
-          "background": "#008F11",
-          "foreground": "#000000",
+          "trailing_diamond": "<background,transparent></>",
+          "background": "#332B0E",
+          "foreground": "#00FF41",
           "template": " {{ .CurrentDate | date .Format }}",
           "properties": {
             "time_format": "3:04:05 PM"
@@ -128,6 +111,19 @@
       "alignment": "left",
       "newline": true,
       "segments": [
+        {
+          "type": "status",
+          "style": "plain",
+          "background": "#0D1F0D",
+          "foreground": "#00FF41",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#FF0000{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "template": "{{ if gt .Code 0 }}{{ else }}{{ end }} "
+        },
         {
           "type": "executiontime",
           "style": "plain",

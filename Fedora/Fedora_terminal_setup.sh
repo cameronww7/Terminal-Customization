@@ -19,6 +19,11 @@ printf "\n\n\n dnf check-update \n"
 sudo dnf check-update
 
 # --- Install terminal tools --------------------------------------------------
+printf "\n\n\n Installing - git \n"
+# You already needed git to clone this repo, but installing it explicitly here
+# means this script also works if you got the repo some other way (zip download, etc)
+sudo dnf install -y git
+
 printf "\n\n\n Installing - gnome-text-editor \n"
 # gedit's successor since Fedora 36 / GNOME 42. If you specifically want the
 # legacy gedit package, run `dnf search gedit` first - it may still resolve
