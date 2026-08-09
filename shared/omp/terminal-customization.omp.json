@@ -13,8 +13,8 @@
           "style": "diamond",
           "leading_diamond": "<transparent,background></>",
           "trailing_diamond": "<background,transparent></>",
-          "background": "#00FF41",
-          "foreground": "#000000",
+          "background": "#000000",
+          "foreground": "#00FF41",
           "template": "🍀 TryHard3r"
         },
         {
