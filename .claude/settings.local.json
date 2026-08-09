@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/src/segments/os.go\" -o /tmp/os.go)",
+      "Read(//tmp/**)",
+      "Bash(curl -s \"https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/src/runtime/shell.go\" -o /tmp/shell.go)",
+      "Bash(curl -s \"https://api.github.com/search/code?q=repo:JanDeDobbeleer/oh-my-posh+func+Platform\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/src/runtime/terminal.go\" -o /tmp/terminal.go)",
+      "Bash(curl -sL \"https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/contents/src/runtime\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/src/runtime/terminal_sysinfo.go\" -o /tmp/terminal_sysinfo.go)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/src/runtime/terminal_unix.go\" -o /tmp/terminal_unix.go)"
+    ]
+  }
+}

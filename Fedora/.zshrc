@@ -108,6 +108,7 @@ zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::vscode
 zinit light supercrabtree/k          # keeps ll='k' / la='k -A' working below - not a
                                       # real OMZ plugin, needs `light` not `snippet`
+zinit snippet OMZP::dnf              # genuinely correct here (Fedora uses dnf)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 
@@ -132,5 +133,6 @@ export PATH=$PATH:/usr/local/go/bin
 
 # ***** Oh My Posh prompt (must load last) *****
 # ---------------------------------------
+export PATH="$HOME/.local/bin:$PATH"
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/terminal-customization.omp.json)"
 # ---------------------------------------

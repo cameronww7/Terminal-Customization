@@ -1,0 +1,170 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 4,
+  "final_space": true,
+  "console_title_template": "{{ .Shell }} in {{ .Folder }}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "diamond",
+          "leading_diamond": "<transparent,background></>",
+          "trailing_diamond": "<background,transparent></>",
+          "background": "#00FF41",
+          "foreground": "#000000",
+          "template": "🍀 TryHard3r"
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+          "leading_diamond": "<transparent,background></>",
+          "trailing_diamond": "<background,transparent></>",
+          "background": "#008F11",
+          "foreground": "#00FF41",
+          "template": "{{ cmd \"sh\" \"-c\" \"~/.config/oh-my-posh/scripts/os_icon.sh\" }}"
+        },
+        {
+          "type": "root",
+          "style": "diamond",
+          "leading_diamond": "<transparent,background></>",
+          "trailing_diamond": "<background,transparent></>",
+          "background": "#132913",
+          "foreground": "#FFFF00",
+          "template": "  "
+        },
+        {
+          "type": "session",
+          "style": "diamond",
+          "leading_diamond": "<transparent,background></>",
+          "trailing_diamond": "<background,transparent></>",
+          "background": "#0D1F0D",
+          "foreground": "#00FF41",
+          "template": " {{ .UserName }}@{{ .HostName }}"
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "leading_diamond": "<transparent,background></>",
+          "trailing_diamond": "<background,transparent></>",
+          "background": "#008F11",
+          "foreground": "#00FF41",
+          "template": " {{ .Path }}",
+          "properties": {
+            "style": "folder"
+          }
+        },
+        {
+          "type": "git",
+          "style": "diamond",
+          "leading_diamond": "<transparent,background></>",
+          "trailing_diamond": "<background,transparent></>",
+          "background": "#132913",
+          "foreground": "#00FF41",
+          "template": "{{ .HEAD }}{{ if .Working.Changed }} ~{{ .Working.String }}{{ end }}{{ if .Staging.Changed }} +{{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
+          "properties": {
+            "branch_icon": " "
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "overflow": "hide",
+      "segments": [
+        {
+          "type": "text",
+          "style": "diamond",
+          "leading_diamond": "<background,transparent></>",
+          "trailing_diamond": "<transparent,background></>",
+          "background": "#0D1F0D",
+          "foreground": "#00FF41",
+          "template": " {{ cmd \"sh\" \"-c\" \"~/.config/oh-my-posh/scripts/vpn_ip.sh\" }}"
+        },
+        {
+          "type": "text",
+          "style": "diamond",
+          "leading_diamond": "<background,transparent></>",
+          "trailing_diamond": "<transparent,background></>",
+          "background": "#132913",
+          "foreground": "#00FF41",
+          "template": "{{ cmd \"sh\" \"-c\" \"~/.config/oh-my-posh/scripts/wifi_signal.sh\" }}"
+        },
+        {
+          "type": "status",
+          "style": "diamond",
+          "leading_diamond": "<background,transparent></>",
+          "trailing_diamond": "<transparent,background></>",
+          "background": "#008F11",
+          "foreground": "#00FF41",
+          "template": "{{ if gt .Code 0 }} {{ .Code }}{{ else }}{{ end }}",
+          "background_templates": [
+            "{{ if gt .Code 0 }}#590000{{ end }}"
+          ],
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#FFFFFF{{ end }}"
+          ]
+        },
+        {
+          "type": "battery",
+          "style": "diamond",
+          "leading_diamond": "<background,transparent></>",
+          "trailing_diamond": "<transparent,background></>",
+          "background": "#132913",
+          "foreground": "#00FF41",
+          "template": "{{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}",
+          "foreground_templates": [
+            "{{if gt .Percentage 70}}#00FF41{{end}}",
+            "{{if gt .Percentage 24}}#FFD43B{{end}}",
+            "{{if true}}#FF0000{{end}}"
+          ],
+          "properties": {
+            "charged_icon": " ",
+            "charging_icon": "⇡ ",
+            "discharging_icon": "⇣ "
+          }
+        },
+        {
+          "type": "time",
+          "style": "diamond",
+          "leading_diamond": "<background,transparent></>",
+          "trailing_diamond": "<transparent,background></>",
+          "background": "#008F11",
+          "foreground": "#000000",
+          "template": " {{ .CurrentDate | date .Format }}",
+          "properties": {
+            "time_format": "3:04:05 PM"
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "executiontime",
+          "style": "plain",
+          "background": "#0D1F0D",
+          "foreground": "#008F11",
+          "properties": {
+            "style": "austin",
+            "threshold": 150
+          },
+          "template": "{{ .FormattedMs }} "
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "background": "#0D1F0D",
+          "foreground": "#00FF41",
+          "template": "❯"
+        }
+      ]
+    }
+  ]
+}

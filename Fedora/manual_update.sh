@@ -30,8 +30,8 @@ printf "\n Updating - Zinit plugins\n"
 zsh -ic "zinit self-update && zinit update --all"
 
 # --- Re-sync your dotfiles and the shared prompt config from the repo --------
-cp "$REPO_ROOT/Kali/.zshrc" ~/.zshrc
-cp "$REPO_ROOT/Kali/.tmux.conf" ~/.tmux.conf
+cp "$REPO_ROOT/Fedora/.zshrc" ~/.zshrc
+cp "$REPO_ROOT/Fedora/.tmux.conf" ~/.tmux.conf
 cp "$REPO_ROOT/shared/omp/terminal-customization.omp.json" ~/.config/oh-my-posh/
 cp "$REPO_ROOT/shared/omp/scripts/"*.sh ~/.config/oh-my-posh/scripts/
 chmod +x ~/.config/oh-my-posh/scripts/*.sh
