@@ -31,7 +31,13 @@ Linux behavior is untouched.
 The Wi-Fi branch reports the connected SSID instead of a signal percentage on
 purpose: the old `airport -I` utility that gives a real RSSI number has been gated
 behind macOS's Location Services privacy permissions since Big Sur, and a background
-prompt script has no business prompting you for that. The VPN branch checks
+prompt script has no business prompting you for that. Worth knowing: the SSID lookup
+it uses instead (`networksetup -getairportnetwork`) hit its own permission wall in
+macOS 15 Sequoia's Local Network privacy feature, confirmed via multiple independent
+reports - it can return "not associated" even while genuinely connected until the
+terminal app is granted Local Network access in System Settings. The script still
+fails soft when that happens (shows `--`/`WIRED` instead of the SSID, doesn't break),
+see [`macOS/README.md`](../macOS/README.md) for the fix. The VPN branch checks
 `scutil --nc list` first (the authoritative source for any VPN profile set up through
 System Settings → VPN), then falls back to scanning `utun` interfaces for one with a
 real IPv4 address, to catch third-party VPN apps like WireGuard or Tailscale that
