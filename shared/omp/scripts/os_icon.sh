@@ -2,6 +2,14 @@
 #
 # Prints a distro-correct OS icon in that distro's brand color.
 #
+# macOS has no /etc/os-release at all (that's a Linux-only convention), so it
+# gets its own check up front via `uname` instead of trying to fit it into
+# the ID-based case below.
+if [ "$(uname -s)" = "Darwin" ]; then
+  printf '<#A3AAAE>\U0000f179</>'  # Apple grey, no WSL to ever prefix here
+  exit 0
+fi
+#
 # We read /etc/os-release directly instead of leaning on Oh My Posh's own
 # distro detection, because that detection is unreliable under WSL: WSL sets
 # Oh My Posh's distro string from $WSL_DISTRO_NAME, and Fedora's official WSL

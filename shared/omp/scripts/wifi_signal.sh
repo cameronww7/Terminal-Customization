@@ -16,6 +16,40 @@
 # don't render private-use glyphs and can silently mangle them on save.
 wifi_icon() { printf ''; }
 
+# macOS has none of nmcli/iw/procfs, so it gets its own self-contained branch
+# that exits before any of the Linux-only logic below ever runs. Reports the
+# SSID instead of a signal percentage: the old `airport -I` utility that
+# would give a real RSSI number has been gated behind Location Services
+# privacy permissions since Big Sur, which a background prompt script has no
+# business prompting for, so this deliberately doesn't try to fight that.
+if [ "$(uname -s)" = "Darwin" ]; then
+  wired_up_darwin() {
+    local iface
+    for iface in $(ifconfig -l 2>/dev/null); do
+      case "$iface" in
+        lo0|utun*|awdl0|llw0|bridge*|ap1|"$WIFI_PORT") continue ;;
+      esac
+      ifconfig "$iface" 2>/dev/null | grep -q 'status: active' && return 0
+    done
+    return 1
+  }
+
+  # The Wi-Fi hardware port isn't reliably "en0" across every Mac model, so
+  # ask networksetup which port is actually the Wi-Fi one instead of guessing.
+  WIFI_PORT=$(networksetup -listallhardwareports 2>/dev/null | awk '/Wi-Fi/{getline; print $2}')
+  SSID=""
+  [ -n "$WIFI_PORT" ] && SSID=$(networksetup -getairportnetwork "$WIFI_PORT" 2>/dev/null | sed -n 's/^Current Wi-Fi Network: //p')
+
+  if [ -n "$SSID" ]; then
+    printf '%s %s' "$(wifi_icon)" "$SSID"
+  elif wired_up_darwin; then
+    printf 'WIRED'
+  else
+    printf '%s --' "$(wifi_icon)"
+  fi
+  exit 0
+fi
+
 # True if any real, non-loopback, non-wireless network interface is up -
 # i.e. you're plugged in over ethernet. Checked via /sys/class/net directly
 # so this works regardless of whether nmcli or iw is installed.
