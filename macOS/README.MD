@@ -21,7 +21,8 @@ worry about.
 | ⚡ `zsh-autosuggestions` | Ghost-text completion pulled from your history as you type |
 | 🌈 `fast-syntax-highlighting` | Commands turn green when they're valid, red when they'd fail |
 | 🧭 `zoxide` | `z <fuzzy-dir-name>` jumps you to any directory you've visited before |
-| 📂 `k` | `ll` and `la` give you a git-aware, colorized directory listing, via [`supercrabtree/k`](https://github.com/supercrabtree/k) |
+| 📂 [`lsd`](https://github.com/lsd-rs/lsd) | A colorful, icon-rich `ls` replacement. `l`/`la`/`lla`/`lt` aliases give you a plain, all-files, long-all-files, and tree listing respectively |
+| 🔎 `zsh-completions` | Extra tab-completion definitions for tools the built-in completion system doesn't already know about (`node`, `yarn`, etc). Just adds to `fpath`, no visual or keybinding changes |
 | 🎨 `colored-man-pages`, `vscode`, `git` aliases | Loaded through Zinit's Oh My Zsh snippet support |
 
 ## Before you start

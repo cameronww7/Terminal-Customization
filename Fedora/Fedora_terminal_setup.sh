@@ -36,6 +36,11 @@ sudo dnf install -y zoxide
 printf "\n\n\n Installing - tree \n"
 sudo dnf install -y tree
 
+printf "\n\n\n Installing - lsd \n"
+# Powers the l/la/lla/lt aliases set up below - a colorful, icon-rich ls
+# replacement (https://github.com/lsd-rs/lsd)
+sudo dnf install -y lsd
+
 printf "\n\n\n Installing - gawk \n"
 # gawk is required by the shared Oh My Posh VPN-IP / wifi-signal segment scripts
 sudo dnf install -y gawk

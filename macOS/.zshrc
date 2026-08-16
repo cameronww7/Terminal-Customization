@@ -119,8 +119,8 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 zinit snippet OMZP::git
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::vscode
-zinit light supercrabtree/k          # keeps ll='k' / la='k -A' working below - not a
-                                      # real OMZ plugin, needs `light` not `snippet`
+zinit ice blockf
+zinit light zsh-users/zsh-completions # extra completion defs (node, yarn, etc) - just fpath, no visuals/keybinds
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
 
@@ -128,11 +128,21 @@ eval "$(zoxide init zsh)"           # replaces autojump - use `z` instead of `j`
 # ---------------------------------------
 
 
+# ***** Re-run completion init *****
+# ---------------------------------------
+# zsh-completions above only adds a directory to fpath - compinit already ran
+# once further up this file, before zinit (and this plugin) even loaded, so
+# it has to run again now to actually pick up those new definitions.
+compinit -d ~/.cache/zcompdump
+# ---------------------------------------
+
+
 # ***** Setup Aliases *****
 # ---------------------------------------
-alias ll='k'
-alias la='k -A'
-alias l='ls -CF'
+alias l='lsd -l'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
 alias his='history'
 # ---------------------------------------
 

@@ -15,7 +15,8 @@ The stack is [Zinit](https://github.com/zdharma-continuum/zinit) as the plugin m
 | ⚡ `zsh-autosuggestions` | Ghost-text completion pulled from your history as you type |
 | 🌈 `fast-syntax-highlighting` | Commands turn green when they're valid, red when they'd fail |
 | 🧭 `zoxide` | `z <fuzzy-dir-name>` jumps you to any directory you've visited before |
-| 📂 `k` | `ll` and `la` give you a git-aware, colorized directory listing. This one's loaded straight from [`supercrabtree/k`](https://github.com/supercrabtree/k) via `zinit light`, since it's a third-party repo and not an actual bundled Oh My Zsh plugin (it can't use the snippet loading the row below uses) |
+| 📂 [`lsd`](https://github.com/lsd-rs/lsd) | A colorful, icon-rich `ls` replacement. `l`/`la`/`lla`/`lt` aliases give you a plain, all-files, long-all-files, and tree listing respectively |
+| 🔎 `zsh-completions` | Extra tab-completion definitions for tools the built-in completion system doesn't already know about (`node`, `yarn`, etc). Just adds to `fpath`, no visual or keybinding changes |
 | 🎨 `colored-man-pages`, `vscode`, `git` aliases | Loaded through Zinit's Oh My Zsh snippet support, so you get the same conveniences without any of the Oh My Zsh overhead |
 
 ## Before you start
@@ -58,7 +59,7 @@ This pulls the latest version of the repo, updates every Zinit plugin, and copie
 - **VPN segment always says `No-VPN`.** That's correct as long as `tun0` doesn't exist. It only lights up once you've connected to something that actually brings up a `tun0` interface.
 - **Network status shows `--`.** No `nmcli` or `iw` found, and no wired connection detected either. If you think you should be connected, check `ip a` to see what interface is actually up.
 - **`zinit: command not found`.** Open a new terminal tab or window. Zinit only becomes available after `.zshrc` has been sourced at least once.
-- **A `zinit snippet OMZP::<name>` line fails with `curl: (22) ... 404`.** That plugin isn't actually bundled in the Oh My Zsh repo. Some well-known "Oh My Zsh plugins" like `k` are really third-party repos people used to install by hand. Check the [ohmyzsh/ohmyzsh `plugins/` folder](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins) to see if it's really there. If it's not, load it with `zinit light <github-user>/<repo>` instead of `zinit snippet OMZP::<name>`.
+- **A `zinit snippet OMZP::<name>` line fails with `curl: (22) ... 404`.** That plugin isn't actually bundled in the Oh My Zsh repo. Some well-known "Oh My Zsh plugins" like `zsh-completions` are really third-party repos people used to install by hand. Check the [ohmyzsh/ohmyzsh `plugins/` folder](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins) to see if it's really there. If it's not, load it with `zinit light <github-user>/<repo>` instead of `zinit snippet OMZP::<name>`.
 - **Nothing changed after editing `shared/omp/terminal-customization.omp.json`.** Editing that file in the repo only changes the repo copy. Run `./manual_update.sh` (or manually `cp` it into `~/.config/oh-my-posh/`) to actually push it live.
 
 ## History, if you're curious

@@ -52,6 +52,11 @@ brew install zoxide
 printf "\n\n\n Installing - tree \n"
 brew install tree
 
+printf "\n\n\n Installing - lsd \n"
+# Powers the l/la/lla/lt aliases set up below - a colorful, icon-rich ls
+# replacement (https://github.com/lsd-rs/lsd)
+brew install lsd
+
 printf "\n\n\n Installing - iTerm2 \n"
 brew install --cask iterm2
 
