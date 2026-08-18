@@ -30,16 +30,20 @@ Open PowerShell in this folder and run:
 That will:
 1. Install Oh My Posh through `winget`. This is the real binary, not the old deprecated `Install-Module oh-my-posh` route, which never actually puts a working `oh-my-posh.exe` on your `PATH`
 2. Install FiraCode Nerd Font Mono
-3. Copy `terminal-customization.omp.json` into `~/.config/oh-my-posh/`
-4. Copy `Microsoft.PowerShell_profile.ps1` to your `$PROFILE`
+3. Set VS Code's integrated terminal font to FiraCode Nerd Font Mono too, if VS Code is installed (see the note below - this is a separate setting from Windows Terminal's font)
+4. Copy `terminal-customization.omp.json` into `~/.config/oh-my-posh/`
+5. Copy `Microsoft.PowerShell_profile.ps1` to your `$PROFILE`
 
 Then:
 1. Set your terminal's font to **FiraCode Nerd Font Mono** (in Windows Terminal that's Settings, then your profile, then Appearance, then Font face)
 2. Open a new PowerShell window
 
+**About that VS Code step:** Windows Terminal and VS Code's integrated terminal each have their own, completely independent font setting. Installing the Nerd Font doesn't make either of them use it automatically, and setting it in one doesn't touch the other. The script sets `"terminal.integrated.fontFamily": "FiraCode Nerd Font Mono"` in your VS Code `settings.json` automatically (merging into whatever's already there, not overwriting it) if it finds a VS Code user profile on this machine at setup time. If you install VS Code *after* running this script, or it wasn't detected, just set that same key by hand: `Ctrl+,`, search "terminal font", or edit `settings.json` directly.
+
 ## If something's not working
 
 - **Prompt shows boxes instead of icons.** Your terminal profile isn't set to FiraCode Nerd Font Mono yet. Installing the font isn't the same as selecting it, you still have to pick it in your terminal settings.
+- **Boxes in VS Code's integrated terminal specifically, even though Windows Terminal looks fine.** VS Code has its own separate font setting from Windows Terminal - see the note in "Installing it" above. Either re-run the setup script now that VS Code is installed, or set `"terminal.integrated.fontFamily": "FiraCode Nerd Font Mono"` in VS Code's `settings.json` yourself.
 - **`oh-my-posh: command not found` right after installing.** Your current session's `PATH` hasn't picked up the new install yet. Open a new PowerShell window. The script tries to refresh `PATH` in place, but a fresh window is the reliable fix.
 - **`winget` not found.** You're probably on an older Windows build without App Installer. Grab it from the Microsoft Store, then run the script again.
 - **Script won't run, says "running scripts is disabled on this system".** Your PowerShell execution policy is blocking local scripts. This repo doesn't touch your execution policy at all, so that's a call you have to make yourself. If you want to allow it: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
